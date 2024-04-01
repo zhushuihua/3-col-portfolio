@@ -1,6 +1,7 @@
 <script>
     import { fade, fly, scale, slide } from "svelte/transition";
     import Container from "./container.svelte";
+    import { sineInOut } from "svelte/easing";
     let showMenu = false;
 </script>
 
@@ -41,7 +42,7 @@
     </div>
     {#if showMenu}
         <div
-            transition:fly={{ y: "-100%", duration: 200 }}
+            transition:fly={{ y: "-100%", duration: 200, easing: sineInOut }}
             class="absolute w-full bottom-0 left-0 translate-y-full bg-zinc-950 text-zinc-500 border-t-2 border-zinc-800 sm:hidden z-0"
         >
             <Container>
